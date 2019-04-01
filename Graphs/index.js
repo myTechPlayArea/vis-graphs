@@ -1,6 +1,6 @@
 import SimpleTextGraph from "./SimpleTextGraph"
 import VariationTextGraph from "./VariationTextGraph"
-import BarGraph from "./DynamicBarGraph"
+import ProgressBarGraph from "./ProgressBarGraph"
 import LineGraph from "./LineGraph"
 import MultiLineGraph from "./LineGraph"
 import PieGraph from "./PieGraph"
@@ -12,7 +12,6 @@ import DynamicBarGraph from "./DynamicBarGraph"
 import Table from "./Table"
 import GeoMap from "./GeoMap"
 import MultiColumnStatusTextGraph from './MultiColumnStatusTextGraph'
-import TreeGraph from './TreeGraph'
 import PortGraph from './PortGraph'
 
 
@@ -22,7 +21,7 @@ import PortGraph from './PortGraph'
 let registry = {
     Table,
     SimpleTextGraph,
-    BarGraph,
+    ProgressBarGraph,
     LineGraph,
     MultiLineGraph,
     PieGraph,
@@ -34,7 +33,6 @@ let registry = {
     DynamicBarGraph,
     GeoMap,
     MultiColumnStatusTextGraph,
-    TreeGraph,
     PortGraph,
 };
 
