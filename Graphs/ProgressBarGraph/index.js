@@ -182,13 +182,14 @@ export default class ProgressBarGraph extends XYGraph {
                                         { ...this.tooltipProps(d) }
                                     />
                                     <GraphText 
-                                        key="label"
+                                        type="label"
                                         x={ x }
                                         y={ y }
                                         data={ d[yColumn] }
                                     />
                                     <GraphText
-                                        key="text"
+                                        type="text"
+                                        isPercentage={true}
                                         x={ availableWidth }
                                         y={ y }
                                         data={ d[xColumn] }
