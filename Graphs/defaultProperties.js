@@ -65,4 +65,6 @@ export default {
     ],
     zeroStart: true,
     yRangePadding: true,
+    isXAxis: false,
+    isYAxis: false,
 }
