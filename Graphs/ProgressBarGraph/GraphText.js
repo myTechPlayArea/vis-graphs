@@ -5,25 +5,28 @@ export default class GraphText extends React.Component {
         super(props);
     }
 
-    getText = () => {
-        const { y, height, isPercentage, type } = this.props;
-        if (height && isPercentage && type === "text") {
-            return y + height/2 + 6;
-        } else if (height && !isPercentage && type === "text") {
-            return y + height+10;
-        } else {
-            return y;
+    getX = () => {
+        const { x, data, height, isPercentage, chartWidthToPixel = 5 } = this.props;
+        if (isPercentage) {
+            return x * 1.01;
         }
+        return height ? x - data.toString().length * chartWidthToPixel : 0
     }
 
+    getY = () => {
+        const { y, height, isPercentage } = this.props;
+        if (isPercentage) {
+            return y - (height * 0.75);
+        }
+        return y
+    }
+
+
     render() {
-        const { x, data, height, type } = this.props
+        const { data, type } = this.props;
         return (
-            <text
-                className={type}
-                x={height ? x : 0}
-                y={this.getText()}
-            > {data}
+            <text className={type} x={this.getX()} y={this.getY()}>
+                {data}
             </text>
         );
     }
